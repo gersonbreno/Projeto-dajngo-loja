@@ -64,16 +64,17 @@ PEDIDO_STATUS=(
 
 
 class Pedido_order(models.Model):
-    Carro = models.OneToOneField(Carro, on_delete= models.CASCADE)
+    carro = models.OneToOneField(Carro, on_delete= models.CASCADE)
+    ordenado_por = models.CharField(max_length=200, default='SeuValorPadrão')
+    endereco_envio = models.CharField(max_length=200)
     telefone = models.CharField(max_length = 10)
     email = models.EmailField(null=True, blank=True)
-    endereco_envio = models.CharField(max_length=200)
     subtotal = models.PositiveIntegerField()
     desconto = models.PositiveIntegerField()
     total = models.PositiveIntegerField()
     pedido_status = models.CharField(max_length = 50, choices = PEDIDO_STATUS)
     criado_em = models.DateTimeField(auto_now_add = True)
-
+   
 
     def __str__(self):
         return "Pedido_order" +  str(self.id) 

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,8 +15,18 @@
     <a href="{% url "lojaapp:sobre" %}"> SOBRE</a> |
     <a href="{% url "lojaapp:contato" %}">CONTATOS</a> |
     <a href="{% url "lojaapp:TodosProdutos" %}">CATEGORIAS</a> |
-    <a href="{% url "lojaapp:meucarro" %}">CARRINHO</a> 
+    <a href="{% url "lojaapp:meucarro" %}">CARRINHO</a> |
     
+    {% if request.user.cliente %}
+    Seja bem vindo {{request.user.username}} !
+    <a href="{% url "lojaapp:clienteperfil" %}">MEU PERFIL</a> 
+    <a href="{% url "lojaapp:clientesair" %}">SAIR</a> 
+   
+  
+    {% else %}
+    <a href="{% url "lojaapp:clienteregistrar" %}">CADASTRAR CLIENTE</a> |
+    <a href="{% url "lojaapp:clienteentrar" %}">LOGIN</a>   
+    {% endif %}
 </div> 
 <hr>
     {% block content%}

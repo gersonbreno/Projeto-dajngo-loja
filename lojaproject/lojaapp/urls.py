@@ -5,6 +5,7 @@ from.views import *
 
 
 
+
 app_name = "lojaapp"
 
 urlpatterns = [
@@ -18,5 +19,8 @@ urlpatterns = [
       path('manipular-carro/<int:cp_id>/', ManipularCarroView.as_view(), name='manipularcarro'),
       path('limpar-carro/', LimparCarroView.as_view(), name='limparcarro'),
       path('checkout/', CheckoutView.as_view(), name='checkout'),
-
+      path('registrar', ClienteResgistrarView.as_view(), name='clienteregistrar'),
+      path('sair', ClienteSairView.as_view(), name='clientesair'),
+      path('entrar/', ClienteentrarView.as_view(), name='clienteentrar'),
+      path('perfil/', ClientePerfilView.as_view(), name='clienteperfil'),
 ]
