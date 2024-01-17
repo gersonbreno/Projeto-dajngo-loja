@@ -69,3 +69,5 @@ class ClienteRegistrarForms(forms.ModelForm):
 class ClienteEntrarForm(forms.Form):
     username = forms.CharField(widget= forms.TextInput)#(attrs = {'placeholder': 'usuario', 'class': "form-control", 'style': 'Width: 300px; display: flex; '})
     password = forms.CharField(widget= forms.PasswordInput )
+
+    

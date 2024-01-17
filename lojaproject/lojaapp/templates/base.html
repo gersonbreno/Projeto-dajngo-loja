@@ -27,10 +27,17 @@
     <a href="{% url "lojaapp:clienteregistrar" %}">CADASTRAR CLIENTE</a> |
     <a href="{% url "lojaapp:clienteentrar" %}">LOGIN</a>   
     {% endif %}
+    <div class="float-end">
+        <form action="{% url "lojaapp:pesquisar" %}" method = "GET">
+        <input type="text" name = "keyword" placeholder="Pesquisa Produtos" required>
+        <button class ="btn btn-success pull-rigth"> Pesquisa
+        </button>
+    </form>
+    </div>
 </div> 
 <hr>
-    {% block content%}
+{% block content %}
 
-    {% endblock %}
+{% endblock %}
 </body>
 </html>
