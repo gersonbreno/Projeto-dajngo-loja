@@ -8,32 +8,32 @@ class ChegarPedidoForms(forms.ModelForm):
     class Meta:
         model = Pedido_order
         fields = ["ordenado_por", "endereco_envio", "telefone", "email"]
-        # widgets= {
-        #     'ordenado_por': TextInput(attrs={
-        #         'class': "form-control",
-        #         'style': 'max-width: 300px;',
-        #         'placeholder': 'ordenado_por'
+        widgets= {
+            'ordenado_por': TextInput(attrs={
+                'class': "form-control",
+                'style': 'max-width: 300px;',
+                'placeholder': 'ordenado_por'
 
-        #     }),
-        #     'endereco_envio': TextInput(attrs={
-        #         'class': "form-control",
-        #         'style': 'max-width: 300px;',
-        #         'placeholder': 'endereco_envio'
+            }),
+            'endereco_envio': TextInput(attrs={
+                'class': "form-control",
+                'style': 'max-width: 300px;',
+                'placeholder': 'endereco_envio'
 
-        #     }),
-        #     'telefone': TextInput(attrs={
-        #         'class': "form-control",
-        #         'style': 'max-width: 300px;',
-        #         'placeholder': 'telefone'
+            }),
+            'telefone': TextInput(attrs={
+                'class': "form-control",
+                'style': 'max-width: 300px;',
+                'placeholder': 'telefone'
 
-        #     }),
-        #     'email': TextInput(attrs={
-        #         'class': "form-control",
-        #         'style': 'max-width: 300px;',
-        #         'placeholder': 'email'
+            }),
+            'email': TextInput(attrs={
+                'class': "form-control",
+                'style': 'max-width: 300px;',
+                'placeholder': 'email'
 
-        #     }),
-        # }
+            }),
+        }
 
 
 class ClienteRegistrarForms(forms.ModelForm):

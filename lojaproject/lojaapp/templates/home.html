@@ -21,8 +21,43 @@
     </div>
 
         </div>
+       
         {% endfor %}
      </div>
+     <nav aria-label="...">
+        <ul class="pagination">
+            {% if produto_list.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ produto_list.previous_page_number }}">Anterior</a>
+                </li>
+            {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                </li>
+            {% endif %}
+            
+            {% for i in produto_list.paginator.page_range %}
+                {% if i == produto_list.number %}
+                    <li class="page-item active"><a class="page-link">{{ i }}</a></li>
+                {% else %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            
+            {% if produto_list.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ produto_list.next_page_number }}">Próxima</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Próxima</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+      </nav>
     </div> 
    
     
